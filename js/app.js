@@ -59,6 +59,25 @@ function addToLibrary(book) {
     save();
 }
 
+// Submit book
+function submitBook(e) {
+    e.preventDefault();
+
+    const inputTitle = document.getElementById("title").value;
+    const inputAuthor = document.getElementById("author").value;
+    const inputPages = document.getElementById("pages").value;
+    radioCheck();
+
+    if(formValidation()) {
+        let newBook = new Book(inputTitle, inputAuthor, inputPages, selectedValue);
+        addToLibrary(newBook);
+        render();
+        formReset();
+    } else { 
+        alert("Por favor preenche todos os campos.");
+    }
+}
+
 // Save books in localStorage
 function save() {
     localStorage.setItem("library", JSON.stringify(myLibrary));
