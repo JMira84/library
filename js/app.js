@@ -61,6 +61,8 @@ function render() {
 
         bookStatus.classList.add("book-status");
         removeBook.classList.add("remove-button", "cursor-pointer", "las", "la-trash-alt");
+
+        removeBook.addEventListener("click", deleteBook);
     }
 }
 
@@ -112,6 +114,18 @@ function submitBook(e) {
         formReset();
     } else { 
         alert("Por favor preenche todos os campos.");
+    }
+}
+
+// Delete book from library
+function deleteBook(e) {
+    if (e.target.classList.contains("remove-button")) {
+        e.target.parentElement.parentElement.remove();
+
+        const index = e.target.parentElement.parentElement.getAttribute("data-book_id");
+        myLibrary.splice(index, 1);
+
+        save();
     }
 }
 
