@@ -61,12 +61,35 @@ function render() {
 
         bookStatus.classList.add("book-status");
         removeBook.classList.add("remove-button", "cursor-pointer", "las", "la-trash-alt");
+    }
 }
 
 // Push book into library
 function addToLibrary(book) {
     myLibrary.push(book);
     save();
+}
+
+function radioCheck() {
+    for (let status of inputStatus) {
+        if (status.checked) {
+            selectedValue = status.value;
+            break;
+        }
+    }
+}
+
+function formValidation() {
+    radioCheck();
+    const inputTitle = document.getElementById("title").value;
+    const inputAuthor = document.getElementById("author").value;
+    const inputPages = document.getElementById("pages").value;
+
+    if (inputTitle === "" || inputAuthor === "" || inputPages === "" || !selectedValue) {
+        return false;
+    }
+
+    return true;
 }
 
 // Submit book
