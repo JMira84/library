@@ -4,6 +4,9 @@ const form = document.querySelector("form");
 const statusInput = document.querySelectorAll("input[type='radio']");
 let selectedValue;
 
+let myLibrary = JSON.parse(localStorage.getItem("library"));
+myLibrary = myLibrary === null ? [] : myLibrary;
+
 class Book {
     constructor(title, author, pages, readStatus) {
         this.title = title;
@@ -79,7 +82,7 @@ function formReset() {
 }
 
 function radioCheck() {
-    for (let status of inputStatus) {
+    for (let status of statusInput) {
         if (status.checked) {
             selectedValue = status.value;
             break;
