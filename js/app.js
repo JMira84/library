@@ -63,6 +63,25 @@ function render() {
         removeBook.classList.add("remove-button", "cursor-pointer", "las", "la-trash-alt");
 
         removeBook.addEventListener("click", deleteBook);
+
+        function changeStatus(e) {
+            const index = e.target.parentElement.parentElement.firstElementChild.getAttribute("data-book_id");
+            const updatedBook = myLibrary[index];
+
+            if (updatedBook.readStatus === "Yes") {
+                updatedBook.readStatus = "No";
+                e.target.textContent = "No";
+                e.target.classList.remove("book-read");
+                e.target.classList.add("book-not-read");
+            } else if (updatedBook.readStatus === "No") {
+                updatedBook.readStatus = "Yes";
+                e.target.textContent = "Yes";
+                e.target.classList.remove("book-not-read");
+                e.target.classList.add("book-read");
+            }
+
+            save();
+        }
     }
 }
 
@@ -127,6 +146,26 @@ function deleteBook(e) {
 
         save();
     }
+}
+
+// Change read status
+function changeStatus(e) {
+    const index = e.target.parentElement.parentElement.firstElementChild.getAttribute("data-book_id");
+    const updatedBook = myLibrary[index];
+
+    if (updatedBook.readStatus === "Yes") {
+        updatedBook.readStatus = "No";
+        e.target.textContent = "No";
+        e.target.classList.remove("book-read");
+        e.target.classList.add("book-not-read");
+    } else if (updatedBook.readStatus === "No") {
+        updatedBook.readStatus = "Yes";
+        e.target.textContent = "Yes";
+        e.target.classList.remove("book-not-read");
+        e.target.classList.add("book-read");
+    }
+
+    save();
 }
 
 // Save books in localStorage
