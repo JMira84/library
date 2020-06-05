@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <title>My Library App</title>
+        <script src="js/app.js" defer></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    </head>
+    <body class="display-flex flex-column">
+        <header>
+            <div class="header-wrapper relative">
+                <div class="container display-flex space-between align-center">
+                    <div class="icon-and-title display-flex justify-center align-center">
+                        <div class="header-icon">
+                            <i class="book-icon las la-book"></i>
+                        </div>
+                        <div class="header-title">
+                            <h1>Library</h1>
+                        </div>
+                    </div><!--end icon-and-title-->
+                    
+                    <div class="show-form-button display-flex">
+                        <i class="plus-button las la-plus"></i>
+                    </div>
+                </div><!--end container-->
+            </div><!--end header-wrapper-->
+
+            <form class="absolute" method="POST" action="home.html">
+                <div class="field-wrapper display-flex flex-column">
+                    <label for="title">Title</label>
+                    <input id="title" type="text" name="title" minlength="2" maxlength="250" autocomplete="off" required autofocus>
+                </div>
+                <div class="field-wrapper display-flex flex-column">
+                    <label for="author">Author</label>
+                    <input id="author" type="text" name="author" minlength="2" maxlength="250" autocomplete="off" required>
+                </div>
+                <div class="field-wrapper display-flex flex-column">
+                    <label for="pages">Pages</label>
+                    <input id="pages" type="text" name="pages" minlength="2" maxlength="5000" autocomplete="off" required>
+                </div>
+                <div class="field-wrapper display-flex flex-column">
+                    <span>Read it?</span>
+                    <div class="radio-field-wrapper display-flex flex-row">
+                        <div class="radio-wrapper display-flex">
+                            <label class="radio-label" for="read-yes">Yes</label>
+                            <input id="read-yes" type="radio" name="read" value="Yes" required>
+                        </div>
+                        <div class="radio-wrapper display-flex">
+                            <label class="radio-label" for="read-no">No</label>
+                            <input id="read-no" type="radio" name="read" value="No" required>
+                        </div>
+                    </div>
+                    <!--end radio-field-wrapper-->
+                </div>
+                <div class="button-wrapper field-wrapper display-flex flex-column align-center">
+                    <button class="cursor-pointer" type="submit" name="send">Add Book</button>
+                </div>
+            </form>
+        </header>
+        <div class="container">
+            <main>
+                <div class="library-wrapper display-flex flex-row flex-wrap justify-start">
+                </div><!--end book-list-wrapper-->
+            </main>
+        </div><!--end container-->
+
+        <footer>
+            <div class="footer-content">
+                <p>Developed by &copy;João Mira, 2020</p>
+            </div>
+        </footer>
+    </body>
+</html>
