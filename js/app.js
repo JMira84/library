@@ -176,3 +176,17 @@ function showForm() {
 const buttonShow = document.querySelector(".show-form-button");
 
 buttonShow.addEventListener("click", showForm);
+
+// Toggle Header Shadow
+const header = document.querySelector("header");
+function toggleShadow() {
+    if (document.body.scrollTop >= 110.8 || document.documentElement.scrollTop >= 110.8) {
+        header.classList.add("show-header-shadow");
+        return;
+    } else {
+        header.classList.remove("show-header-shadow");
+        return;
+    }
+}
+
+document.addEventListener("scroll", toggleShadow);
