@@ -64,24 +64,7 @@ function render() {
 
         removeBook.addEventListener("click", deleteBook);
 
-        function changeStatus(e) {
-            const index = e.target.parentElement.parentElement.firstElementChild.getAttribute("data-book_id");
-            const updatedBook = myLibrary[index];
-
-            if (updatedBook.readStatus === "Yes") {
-                updatedBook.readStatus = "No";
-                e.target.textContent = "No";
-                e.target.classList.remove("book-read");
-                e.target.classList.add("book-not-read");
-            } else if (updatedBook.readStatus === "No") {
-                updatedBook.readStatus = "Yes";
-                e.target.textContent = "Yes";
-                e.target.classList.remove("book-not-read");
-                e.target.classList.add("book-read");
-            }
-
-            save();
-        }
+        bookStatus.addEventListener("click", changeStatus);
     }
 }
 
@@ -176,3 +159,20 @@ function save() {
 form.addEventListener("submit", submitBook);
 
 document.addEventListener("DOMContentLoaded", render);
+
+
+// Show form
+const plusIcon = document.querySelector(".plus-button");
+function rotateIcon() {
+    plusIcon.classList.toggle("rotate-icon");
+}
+
+function showForm() {
+    const form = document.querySelector("form");
+    form.classList.toggle("show-form");
+    rotateIcon();
+}
+
+const buttonShow = document.querySelector(".show-form-button");
+
+buttonShow.addEventListener("click", showForm);
