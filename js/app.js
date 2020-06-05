@@ -13,8 +13,18 @@ class Book {
     }
 }
 
+function clearElements() {
+    let firstElement = libraryWrapper.firstElementChild;
+
+    while (firstElement) {
+        firstElement.remove();
+        firstElement = libraryWrapper.firstElementChild;
+    }
+}
+
 // Render elements
 function render() {
+    clearElements();
     for (let book of myLibrary) {
         const bookListWrapper = libraryWrapper.appendChild(document.createElement("div"));
         const bookList = bookListWrapper.appendChild(document.createElement("dl"));
@@ -82,3 +92,7 @@ function submitBook(e) {
 function save() {
     localStorage.setItem("library", JSON.stringify(myLibrary));
 }
+
+form.addEventListener("submit", submitBook);
+
+document.addEventListener("DOMContentLoaded", render);
