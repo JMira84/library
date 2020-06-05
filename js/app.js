@@ -68,6 +68,8 @@ function render() {
         removeBook.addEventListener("click", deleteBook);
 
         bookStatus.addEventListener("click", changeStatus);
+
+        save();
     }
 }
 
