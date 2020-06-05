@@ -53,6 +53,12 @@ function render() {
         removeBook.classList.add("remove-button", "cursor-pointer", "las", "la-trash-alt");
 }
 
+// Push book into library
+function addToLibrary(book) {
+    myLibrary.push(book);
+    save();
+}
+
 // Save books in localStorage
 function save() {
     localStorage.setItem("library", JSON.stringify(myLibrary));
