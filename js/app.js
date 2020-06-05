@@ -156,6 +156,7 @@ function changeStatus(e) {
 
 // Save books in localStorage
 function save() {
+    localStorage.removeItem('library');
     localStorage.setItem("library", JSON.stringify(myLibrary));
 }
 
