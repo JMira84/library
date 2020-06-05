@@ -52,3 +52,8 @@ function render() {
         bookStatus.classList.add("book-status");
         removeBook.classList.add("remove-button", "cursor-pointer", "las", "la-trash-alt");
 }
+
+// Save books in localStorage
+function save() {
+    localStorage.setItem("library", JSON.stringify(myLibrary));
+}
