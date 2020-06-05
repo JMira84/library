@@ -70,6 +70,10 @@ function addToLibrary(book) {
     save();
 }
 
+function formReset() {
+    form.reset();
+}
+
 function radioCheck() {
     for (let status of inputStatus) {
         if (status.checked) {
