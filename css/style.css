@@ -338,6 +338,8 @@ header,
     h2,
     .book-title { font-size: 2rem; }
 
+    .book-title:after { height: 2px; }
+
     .book-author { font-size: 1.8rem; }
 
     .book-list-wrapper { height: 300px; }
