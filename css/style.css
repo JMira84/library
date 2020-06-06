@@ -347,7 +347,7 @@ header,
 
     .book-list-wrapper { height: 300px; }
 
-    .show-form { top: 98px; }
+    .show-form { top: 97px; }
 
     .header-title h1 { font-size: 2.5rem; }
 
@@ -376,8 +376,6 @@ header,
     .book-icon { font-size: 3.8rem; }
 
     .plus-button { font-size: 2.2rem; }
-
-    .show-form { top: 99px; }
 }
 
 /*-------------------------------------------------------------*/
