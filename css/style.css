@@ -215,6 +215,7 @@ label,
 .field-wrapper { 
     max-width: 700px;
     margin: 0 auto;
+    margin-bottom: 15px;
 }
 
 .radio-wrapper { padding-right: 20px; }
@@ -328,13 +329,12 @@ header,
 }
 
 @media screen and (max-width: 500px) {
-    html { font-size: 52.5%; }
+    html { font-size: 54.5%; }
 
     .book-list-wrapper { height: 320px; }
 }
 
 @media screen and (max-width: 400px) {
-    html { font-size: 50.5%; }
 
     .header-title h1 { font-size: 3rem; }
 
