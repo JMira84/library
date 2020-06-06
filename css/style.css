@@ -34,16 +34,17 @@ footer, header, hgroup, menu, nav, section {
 
 html,
 body { 
-    height: 100%;
     margin: 0; 
 }
 
 html { 
+    height: 100%;
     font-size: 62.5%;
     overflow-x: hidden;
 }
 
 body {
+    min-height: 100%;
     font-family: "Montserrat", sans-serif;
     font-size: 1.4rem;
     line-height: 28px;
