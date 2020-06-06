@@ -127,7 +127,7 @@ function deleteBook(e) {
     if (e.target.classList.contains("remove-button")) {
         e.target.parentElement.parentElement.remove();
 
-        const index = e.target.parentElement.parentElement.getAttribute("data-book_id");
+        const index = e.target.parentElement.parentElement.firstElementChild.getAttribute("data-book_id");
         myLibrary.splice(index, 1);
 
         save();
